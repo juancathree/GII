@@ -19,9 +19,63 @@ RAND_TYPE SimpleRandomGenerator::a;
 
 using namespace Asedio;
 
-float cellValue(int row, int col, bool** freeCells, int nCellsWidth, int nCellsHeight
-	, float mapWidth, float mapHeight, List<Object*> obstacles, List<Defense*> defenses) {
-	return 0; // implemente aqui la función que asigna valores a las celdas
+Vector3 cellCenterToPosition(int i, int j, float cellWidth, float cellHeight){ return Vector3((j * cellWidth) + cellWidth * 0.5f, (i * cellHeight) + cellHeight * 0.5f, 0); }
+
+bool factibilidad(Defense* defense, std::list<Object*> obstacles, std::list<Defense*> defensesPlaced){
+    bool factible = true;
+    List<Object*>::iterator currentObstacle = obstacles.begin();
+    List<Defense*>::iterator currentDefense = defensesPlaced.begin();
+
+    while(currentObstacle != obstacles.end() && factible){
+        if(_distance(defense->position, (*currentObstacle)->position) < (defense->radio + (*currentObstacle)->radio)){
+            factible = false;
+        }
+        currentObstacle++;
+    }
+
+    while(currentDefense != defensesPlaced.end() && factible){
+        if(_distance(defense->position, (*currentDefense)->position) < (defense->radio + (*currentDefense)->radio)){
+            factible = false;
+        }
+        currentDefense++;
+    }
+
+    return factible;
+}
+
+float cellValue(int row, int col, int nCellsWidth, int nCellsHeight, float mapWidth, float mapHeight, List<Object*> obstacles, Defense* base = NULL) {
+    int value = 0;
+    float distance;
+    float cellWidth = mapWidth / nCellsWidth;
+    float cellHeight = mapHeight / nCellsHeight;
+    List<Object*>::iterator currentObstacle = obstacles.begin();
+    if(base == NULL){
+        bool choca = false;
+        while(currentObstacle != obstacles.end() && !choca){
+            distance = _distance(base->position, (*currentObstacle)->position) - (base->radio + (*currentObstacle)->radio);
+            if((distance < 2*cellWidth || distance < 2*cellHeight) && distance > 0 ){
+                value++;
+            }
+            else if(distance < 0){
+                value = 0;
+                choca = true;
+            }
+        }
+    }
+    else{
+        Vector3 defense = cellCenterToPosition(row, col, cellWidth, cellHeight);
+        distance = _distance(defense, base->position) ;
+        bool tieneValor = false;
+        int i=1;
+        while(!tieneValor){
+            if(distance < i*cellWidth || distance < i*cellHeight){
+                value = 100-i;
+                tieneValor = true;
+            }
+            i++;
+        }
+    }
+	return value; // implemente aqui la funciï¿½n que asigna valores a las celdas
 }
 
 void DEF_LIB_EXPORTED placeDefenses(bool** freeCells, int nCellsWidth, int nCellsHeight, float mapWidth, float mapHeight
@@ -30,14 +84,47 @@ void DEF_LIB_EXPORTED placeDefenses(bool** freeCells, int nCellsWidth, int nCell
     float cellWidth = mapWidth / nCellsWidth;
     float cellHeight = mapHeight / nCellsHeight; 
 
-    int maxAttemps = 1000;
+    std::list<Defense*> defensesPlaced;
     List<Defense*>::iterator currentDefense = defenses.begin();
-    while(currentDefense != defenses.end() && maxAttemps > 0) {
 
-        (*currentDefense)->position.x = ((int)(_RAND2(nCellsWidth))) * cellWidth + cellWidth * 0.5f;
-        (*currentDefense)->position.y = ((int)(_RAND2(nCellsHeight))) * cellHeight + cellHeight * 0.5f;
-        (*currentDefense)->position.z = 0; 
-        ++currentDefense;
+    // int maxAttemps = 1000;
+    int max = 0;
+    int baseRow = 0, baseCol = 0;
+    float** cellValues = new float*[nCellsHeight];
+    for(int i=0; i<nCellsHeight; i++){
+        cellValues[i] = new float[nCellsWidth];
+        for(int j=0; j<nCellsWidth; j++){
+            cellValues[i][j] = cellValue(i,j, nCellsWidth, nCellsHeight, mapWidth, mapHeight, obstacles);
+            max = (max > cellValues[i][j]) ? max : cellValues[i][j];
+            baseRow = i; baseCol = j;
+        }
+    }
+    
+    Vector3 basePosition = cellCenterToPosition(baseRow, baseCol, cellWidth, cellHeight);
+    
+    (*currentDefense)->position.x = basePosition.x;
+    (*currentDefense)->position.y = basePosition.y;
+    (*currentDefense)->position.z = basePosition.z;
+    currentDefense++;
+    
+    for(int i=0; i<nCellsHeight; i++){
+        for(int j=0; j<nCellsWidth; j++){
+            cellValues[i][j] = cellValue(i,j, nCellsWidth, nCellsHeight, mapWidth, mapHeight, obstacles, (*currentDefense));
+        }
+    }
+
+    while(currentDefense != defenses.end()) {
+
+        do{
+            
+            (*currentDefense)->position.x = ((int)(_RAND2(nCellsWidth))) * cellWidth + cellWidth * 0.5f;
+            (*currentDefense)->position.y = ((int)(_RAND2(nCellsHeight))) * cellHeight + cellHeight * 0.5f;
+            (*currentDefense)->position.z = 0; 
+        
+        }while(!factibilidad((*currentDefense), obstacles, defensesPlaced));
+        
+        defensesPlaced.push_back((*currentDefense));
+        currentDefense++;
     }
 
 #ifdef PRINT_DEFENSE_STRATEGY
