@@ -1,4 +1,4 @@
-BASE_DIR = APELLIDO1_APELLIDO2_NOMBRE
+BASE_DIR = LUCENA_MONJE_JUANCARLOS
 TAR_NAME = practicas-da
 
 ####################### FIN CONFIGURACION ###########################

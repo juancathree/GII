@@ -71,7 +71,7 @@ float cellValue(int row, int col, int nCellsWidth, int nCellsHeight, float mapWi
             distance = _distance(base->position, (*currentObstacle)->position);
             sumado = false;
             while(!sumado){
-                if(distance < i*base->radio){
+                if(distance <= i*base->radio){
                     value -= i;
                     sumado = true;
                 }
@@ -86,7 +86,7 @@ float cellValue(int row, int col, int nCellsWidth, int nCellsHeight, float mapWi
         distance = _distance(defense, base->position);
         sumado = false;
         while(!sumado){
-            if(distance < i*base->radio){
+            if(distance <= i*base->radio){
                 value -= i;
                 sumado = true;
             }

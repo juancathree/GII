@@ -1,13 +1,39 @@
 \begin{lstlisting}
 // sustituya este codigo por su respuesta
-void placeDefenses(...) {
+void DEF_LIB_EXPORTED placeDefenses(bool** freeCells, int nCellsWidth, int nCellsHeight, float mapWidth, float mapHeight
+              , std::list<Object*> obstacles, std::list<Defense*> defenses) {
 
-    List<Defense*>::iterator currentDefense = defenses.begin();
-    while(currentDefense != defenses.end() && maxAttemps > 0) {
+    // Asignacion valores para las demas
+    List<Cells> cells2;
+    for(int i=0; i < nCellsHeight; i++){
+        for(int j=0; j < nCellsWidth; j++){ 
+            aux.row = i;
+            aux.col = j;
+            aux.value = (int)cellValue(i,j, nCellsWidth, nCellsHeight, mapWidth, mapHeight, obstacles, (*currentDefense), false); 
+            cells2.push_back(aux);
+        }
+    }
+    currentDefense++;
+        
+    // Ordenar la lista para las demas
+    ordenar(cells2);
 
-        (*currentDefense)->position.x = ((int)(_RAND2(nCellsWidth))) * cellWidth + cellWidth * 0.5f;
-        ...
-        ++currentDefense;
+    List<Cells>::iterator currentCell2 = cells2.begin();
+
+    // algoritmo voraz demas
+    while(currentDefense != defenses.end()){
+        (*currentDefense)->position.x = 0;
+        while((*currentDefense)->position.x == 0 && currentCell2 != cells2.end()){
+            Vector3 currentPosition = cellCenterToPosition((*currentCell2).row, (*currentCell2).col, cellWidth, cellHeight);
+            (*currentDefense)->position.x = currentPosition.x;
+            (*currentDefense)->position.y = currentPosition.y;
+            if(!factibilidad((*currentDefense), obstacles, defensesPlaced, mapWidth, mapHeight)){
+                (*currentDefense)->position.x = 0;
+            }
+            currentCell2++;
+        }
+        defensesPlaced.push_back((*currentDefense));
+        currentDefense++;
     }
 }
 \end{lstlisting}

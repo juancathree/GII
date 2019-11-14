@@ -1,13 +1,40 @@
 \begin{lstlisting}
 // sustituya este codigo por su respuesta
-void placeDefenses(...) {
 
-    List<Defense*>::iterator currentDefense = defenses.begin();
-    while(currentDefense != defenses.end() && maxAttemps > 0) {
+struct Cells{
+    int row=0, col=0;
+    float value=0;
+};
 
-        (*currentDefense)->position.x = ((int)(_RAND2(nCellsWidth))) * cellWidth + cellWidth * 0.5f;
-        ...
-        ++currentDefense;
+void DEF_LIB_EXPORTED placeDefenses(bool** freeCells, int nCellsWidth, int nCellsHeight, float mapWidth, float mapHeight
+              , std::list<Object*> obstacles, std::list<Defense*> defenses) {
+   // Asignacion valores para la base
+    List<Cells> cells;
+    Cells aux;
+    for(int i=0; i < nCellsHeight; i++){
+        for(int j=0; j < nCellsWidth; j++){ 
+            aux.row = i;
+            aux.col = j;
+            aux.value = (int)cellValue(i,j, nCellsWidth, nCellsHeight, mapWidth, mapHeight, obstacles, (*currentDefense), true); 
+            cells.push_back(aux);
+        }
     }
-}
+
+    // Ordenar la lista para la base
+    ordenar(cells);
+
+    List<Cells>::iterator currentCell = cells.begin();
+    (*currentDefense)->position.x=0;
+    
+    // algoritmo voraz base
+    while((*currentDefense)->position.x ==0 && currentCell != cells.end()){
+        Vector3 currentPosition = cellCenterToPosition((*currentCell).row, (*currentCell).col, cellWidth, cellHeight);
+        (*currentDefense)->position.x = currentPosition.x;
+        (*currentDefense)->position.y = currentPosition.y;
+        if(!factibilidad((*currentDefense), obstacles, defensesPlaced, mapWidth, mapHeight)){
+            (*currentDefense)->position.x = 0;
+        }
+        currentCell++;
+    }
+    defensesPlaced.push_back((*currentDefense));
 \end{lstlisting}

@@ -1,1 +1,24 @@
-Escriba aquí su respuesta al ejercicio 2.
+bool factibilidad(Defense* defense, std::list<Object*> obstacles, std::list<Defense*> defensesPlaced, float mapWidth, float mapHeight){
+    bool factible = true;
+    List<Object*>::iterator currentObstacle = obstacles.begin();
+    List<Defense*>::iterator currentDefense = defensesPlaced.begin();
+
+    if((defense->position.x + defense->radio) > mapWidth || (defense->position.x - defense->radio) < 0 || (defense->position.y + defense->radio) > mapHeight || (defense->position.y - defense->radio) < 0){
+        factible = false;
+    }
+
+    while(currentObstacle != obstacles.end() && factible){
+        if((_distance(defense->position, (*currentObstacle)->position) - (defense->radio + (*currentObstacle)->radio)) < 0){
+            factible = false;
+        }
+        currentObstacle++;
+    }
+
+    while(currentDefense != defensesPlaced.end() && factible){
+        if((_distance(defense->position, (*currentDefense)->position) - (defense->radio + (*currentDefense)->radio)) < 0){
+            factible = false;
+        }
+        currentDefense++;
+    }
+    return factible;
+}Escriba aquí su respuesta al ejercicio 2.
