@@ -57,17 +57,14 @@ class Pila {
 };
 
 template <typename tElemento>
-inline Pila<tElemento>::Pila(unsigned TamaMax) :
-elementos(new tElemento[TamaMax]),
-Lmax(TamaMax),
-tope_(-1)
-{}
+inline Pila<tElemento>::Pila(unsigned TamaMax) : elementos(new tElemento[TamaMax]),
+                                                 Lmax(TamaMax),
+                                                 tope_(-1){}
 
 template <typename tElemento>
-Pila<tElemento>::Pila(const Pila<tElemento>& P) :
-elementos(new tElemento[P.Lmax]),
-Lmax(P.Lmax),
-tope_(P.tope_){
+Pila<tElemento>::Pila(const Pila<tElemento>& P) : elementos(new tElemento[P.Lmax]), 
+                                                  Lmax(P.Lmax), 
+                                                  tope_(P.tope_){
     for (int i = 0; i <= tope_; i++) // copiar el vector
         elementos[i] = P.elementos[i];
 }
