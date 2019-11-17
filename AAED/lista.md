@@ -181,7 +181,7 @@ inline Lista<T>::~Lista(){
 
 ### Enlazada con cabecera
 
-<h3 align="center"><img src="lista_enlazada_cabecera.png" width="400px"/></h3>
+<h3 align="center"><img src="lista_enlazada_cabecera.png"/></h3>
 
 ```c++
 #ifndef LISTA_ENLA_H
