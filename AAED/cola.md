@@ -7,7 +7,7 @@ Una **`cola`** es una secuencia de elementos en la que las operaciones se realiz
 En una cola el primer elemento añadido es el primero en salir de ella, por lo que también se les conoce como estructuras
 **FIFO: First Input First Output.**
 
-<h3 align="center"><img src="cola.png" width="200px"></h3>
+<h3 align="center"><img src="cola.png"/></h3>
 
 ## Operaciones
 
@@ -126,7 +126,7 @@ inline Cola<T>::~Cola(){
 
 ### Enlazada
 
-<h3 align="center"><img src="cola_enlazada.png" width="350px"></h3>
+<h3 align="center"><img src="cola_enlazada.png"/></h3>
 
 ```c++
 #ifndef COLA_ENLA_H
