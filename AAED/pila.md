@@ -6,7 +6,7 @@ operaciones se realizan por un extremo de la misma.
 En una pila el último elemento añadido es el primero en salir
 de ella, por lo que también se les conoce como estructuras **LIFO: Last Input First Output**
 
-<h3 align="center"><img src="pila.png"/></h3>
+<h3 align="center"><img src="pila.png" width="250px"/></h3>
 
 ## Operaciones
 
@@ -125,7 +125,7 @@ inline Pila<tElemento>::~Pila(){
 
 ### Celdas enlazadas
 
-<h3 align="center"><img src="pila_enlazada.png"/></h3>
+<h3 align="center"><img src="pila_enlazada.png" width="350px"/></h3>
 
 ```c++
 #ifndef PILA_ENLA_H
