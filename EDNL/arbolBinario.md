@@ -491,7 +491,7 @@ typename Abin<T>::nodo Abin<T>::copiar(Abin<T>::nodo n){
 
 ### Posiciones relativas
 
-<h3 align="center"><img src="imagenes/arbolBinario_posrel.png" width="400px"/></h3>
+<h3 align="center"><img src="imagenes/arbolBinario_posrel.png" width="700px"/></h3>
 
 
 ```c++
