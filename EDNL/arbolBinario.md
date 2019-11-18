@@ -1,12 +1,16 @@
 # INDICE
 
-- [Operaciones](#id2)
-- [Implementacion](#id3)
-    - [Vectorial](#id4)
-    - [Celdas Enlazadas](#id5)
-    - [Posiciones Relativas](#id6)
-
-<div id='id1' />
+- [Operaciones](#id1)
+- Implementacion
+    - [Vectorial](#id2)
+    - [Celdas Enlazadas](#id3)
+    - [Posiciones Relativas](#id4)
+- Recorridos
+    - [Anchura](#id5)
+    - Profundidad
+        - [Preorden](#id6)
+        - [Inorden](#id7)
+        - [Postorden](#id8)
 
 # Arbol Binario
 
@@ -14,7 +18,7 @@ Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de 
 
 <h3 align="center"><img src="imagenes/arbolbinario.png" width="300px"/></h3>
 
-<div id='id2' />
+<div id='id1' />
 
 ## Operaciones
 
@@ -68,11 +72,10 @@ Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de 
 - **Pre:** n es un nodo de A.
 - **Post:** Devuelve el nodo hijo derecho del nodo n. Si no existe, devuelve NODO_NULO.
 
-<div id='id3' />
 
 ## Implementacion
 
-<div id='id4' />
+<div id='id2' />
 
 ### Vectorial
 
@@ -296,7 +299,7 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& a){
 #endif // ABIN_VEC0_H
 ```
 
-<div id='id5' />
+<div id='id3' />
 
 ### Celdas enlazadas
 
@@ -484,9 +487,12 @@ typename Abin<T>::nodo Abin<T>::copiar(Abin<T>::nodo n){
 #endif // ABIN_H
 ```
 
-<div id='id6' />
+<div id='id4' />
 
 ### Posiciones relativas
+
+<h3 align="center"><img src="imagenes/arbolBinario_posrel.png" /></h3>
+
 
 ```c++
 #ifndef ABIN_VEC1_H
@@ -670,4 +676,83 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& a){
 }
 
 #endif // ABIN_VEC1_H
+```
+
+## Recorridos
+
+<div id='id5' />
+
+### Anchura
+
+```c++
+template <typename T>
+void recNivelesAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(typename Abin<T>::nodo, const Abin<T>&)){ 
+    Cola<typename Abin<T>::nodo> C; // cola de nodos de árbol binario
+    if (n != Abin<T>::NODO_NULO){
+        do {
+            if (!C.vacia()){
+                n = C.frente();
+                C.pop();
+            }
+            procesar(n, A);
+            if (A.hijoIzqdoB(n) != Abin<T>::NODO_NULO)
+                C.push(A.hijoIzqdoB(n));
+            if (A.hijoDrchoB(n) != Abin<T>::NODO_NULO)
+                C.push(A.hijoDrchoB(n));
+        } while (!C.vacia());
+    }
+}
+```
+
+### Altura
+
+<div id='id6' />
+
+#### Preorden
+
+<h3 align="center"><img src="imagenes/preorden.png" /></h3>
+
+```c++
+template <typename T>
+void preordenAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(typename Abin<T>::nodo, const Abin<T>&)){
+    if (n != Abin<T>::NODO_NULO){
+        procesar(n, A);
+        preordenAbin(A.hijoIzqdoB(n), A, procesar);
+        preordenAbin(A.hijoDrchoB(n), A, procesar);
+    }
+}
+```
+
+<div id='id7' />
+
+#### Inorden
+
+<h3 align="center"><img src="imagenes/inorden.png" /></h3>
+
+```c++
+template <typename T>
+void inordenAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(typename Abin<T>::nodo, const Abin<T>&)){
+    if (n != Abin<T>::NODO_NULO){
+        inordenAbin(A.hijoIzqdoB(n), A, procesar);
+        procesar(n, A);
+        inordenAbin(A.hijoDrchoB(n), A, procesar);
+    }
+}
+```
+
+<div id='id8' />
+
+#### Postorden
+
+<h3 align="center"><img src="imagenes/postorden.png" /></h3>
+
+```c++
+template <typename T>
+void postordenAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(typename Abin<T>::nodo, const Abin<T>&)){
+    if (n != Abin<T>::NODO_NULO){
+        postordenAbin(A.hijoIzqdoB(n), A, procesar);
+        postordenAbin(A.hijoDrchoB(n), A, procesar);
+        procesar(n, A);
+    }
+}
 ```
