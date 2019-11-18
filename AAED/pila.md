@@ -1,3 +1,10 @@
+# INDICE
+
+- [Operaciones](#id1)
+- [Implementacion](#id2)
+    - [Vectorial](#id3)
+    - [Celdas enlazadas](#id4)
+
 # Pila
 
 Una **`pila`** es una secuencia de elementos en la que todas las
@@ -7,6 +14,8 @@ En una pila el último elemento añadido es el primero en salir
 de ella, por lo que también se les conoce como estructuras **LIFO: Last Input First Output**
 
 <h3 align="center"><img src="pila.png"/></h3>
+
+<div id="id1" />
 
 ## Operaciones
 
@@ -29,9 +38,13 @@ siguiente se convierte en el nuevo tope.
 - **Postcondiciones:** Inserta el elemento x en el tope de la pila y el
 antiguo tope pasa a ser el siguiente.
 
+<div id="id2" />
+
 ## Implementaciones
 
-### Vectorial estatica
+<div id="id3" />
+
+### Vectorial
 
 ```c++
 #ifndef PILA_VEC_H
@@ -122,6 +135,8 @@ inline Pila<tElemento>::~Pila(){
 
 #endif // PILA_VEC_H
 ```
+
+<div id="id4" />
 
 ### Celdas enlazadas
 
