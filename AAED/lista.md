@@ -1,3 +1,12 @@
+# INDICE
+
+- [Operaciones](#id1)
+- [Implementacion](#id2)
+    - [Vectorial](#id3)
+    - [Enlazada con cabecera](#id4)
+    - [Doblemente enlazada con cabecera](#id5)
+
+
 # Lista
 
 Una lista es una secuencia de elementos de un tipo determinado L = (a1, a2, ..., an) cuya longitud es n > 0. Si n = 0, entonces es una lista vacía.
@@ -5,6 +14,8 @@ Una lista es una secuencia de elementos de un tipo determinado L = (a1, a2, ...,
 - **Posicion:** Lugar que ocupa un elemento en la lista. Los elementos están ordenados de forma lineal según las posiciones que ocupan. Todos los elementos, salvo el primero, tienen un único predecesor y todos,excepto el último, tienen un único sucesor.
 
 - **Posicion fin():** Posición especial que sigue a la del último elemento y que nunca está ocupada por elemento alguno.
+
+<div id="id1" />
 
 ## Operaciones
 
@@ -41,7 +52,11 @@ Una lista es una secuencia de elementos de un tipo determinado L = (a1, a2, ...,
 **`posicion fin() const`**
 - **Postcondiciones:** Devuelve la última posición de la lista, la siguiente a la del último elemento. Esta posición siempre está vacía, no existe ningún elemento que la ocupe.
 
+<div id="id2" />
+
 ## Implementaciones
+
+<div id="id3" />
 
 ### Vectorial
 
@@ -178,6 +193,8 @@ inline Lista<T>::~Lista(){
 
 #endif // LISTA_VEC_H
 ```
+
+<div id="id4" />
 
 ### Enlazada con cabecera
 
@@ -320,6 +337,8 @@ template <typename T> Lista<T>::~Lista(){
 
 #endif // LISTA_ENLA_H
 ```
+
+<div id="id5" />
 
 ### Doblemente enlazada con cabecera
 
