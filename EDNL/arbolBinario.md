@@ -1,15 +1,16 @@
 # INDICE
 
-- [Operaciones](#id2)
+- [Operaciones](#id1)
 - Implementacion
-    - [Vectorial](#id3)
-    - [Celdas Enlazadas](#id4)
-    - [Posiciones Relativas](#id5)
+    - [Vectorial](#id2)
+    - [Celdas Enlazadas](#id3)
+    - [Posiciones Relativas](#id4)
 - Recorridos
-    - [Profundidad](#id6)
-    - [Anchura](#id7)
-
-<div id='id1' />
+    - [Anchura](#id5)
+    - Profundidad
+        - [Preorden](#id6)
+        - [Inorden](#id7)
+        - [Postorden](#id8)
 
 # Arbol Binario
 
@@ -17,7 +18,7 @@ Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de 
 
 <h3 align="center"><img src="imagenes/arbolbinario.png" width="300px"/></h3>
 
-<div id='id2' />
+<div id='id1' />
 
 ## Operaciones
 
@@ -74,7 +75,7 @@ Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de 
 
 ## Implementacion
 
-<div id='id3' />
+<div id='id2' />
 
 ### Vectorial
 
@@ -298,7 +299,7 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& a){
 #endif // ABIN_VEC0_H
 ```
 
-<div id='id4' />
+<div id='id3' />
 
 ### Celdas enlazadas
 
@@ -486,7 +487,7 @@ typename Abin<T>::nodo Abin<T>::copiar(Abin<T>::nodo n){
 #endif // ABIN_H
 ```
 
-<div id='id5' />
+<div id='id4' />
 
 ### Posiciones relativas
 
@@ -679,7 +680,7 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& a){
 
 ## Recorridos
 
-<div id='id6' />
+<div id='id5' />
 
 ### Anchura
 
@@ -705,6 +706,7 @@ void recNivelesAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar
 
 ### Altura
 
+<div id='id6' />
 
 #### Preorden
 
@@ -721,6 +723,7 @@ void preordenAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(
 }
 ```
 
+<div id='id7' />
 
 #### Inorden
 
@@ -737,6 +740,7 @@ void inordenAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(t
 }
 ```
 
+<div id='id8' />
 
 #### Postorden
 
