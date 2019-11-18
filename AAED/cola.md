@@ -1,10 +1,9 @@
 # INDICE
 
-- [Cola](#id1)
-    - [Operaciones](#id2)
-    - [Implementaciones](#id3)
-        - [Vectorial](#id4)
-        - [Enlazada](#id5)
+- [Operaciones](#id2)
+- [Implementaciones](#id3)
+    - [Vectorial](#id4)
+    - [Enlazada](#id5)
 
 <div id="id1" />
 
