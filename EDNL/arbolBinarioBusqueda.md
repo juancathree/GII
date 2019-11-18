@@ -52,7 +52,7 @@ devuelve un árbol vacío.
 
 ### Estructura dinamica recursiva
 
-<h3 align="center"><img src="imagenes/abbrecursiva" /></h3>
+<h3 align="center"><img src="imagenes/abbrecursiva.png" /></h3>
 
 ```c++
 #ifndef ABB_H
@@ -235,3 +235,6 @@ Para garantizar un tiempo proporcional a la mínima altura posible, o sea O(log 
 
 - **Árbol AVL (Adelson-Velskii & Landis, 1962):** Árbol binario de búsqueda equilibrado. Los algoritmos de inserción y eliminación en un árbol AVL pueden mantener el árbol siempre equilibrado en un tiempo O(log n). Su implementación no es sencilla, ya que si se va a romper la condición de equilibrio, tienen que reorganizar el árbol realizando rotaciones de los nodos.
 
+<h3 align="center"><img src="imagenes/noavl.png" /></h3>
+
+<h3 align="center"><img src="imagenes/avl.png" /></h3>
