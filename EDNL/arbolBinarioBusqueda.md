@@ -229,7 +229,9 @@ El tiempo de las operaciones sobre un ABB (búsqueda, inserción y eliminación)
 
 Para garantizar un tiempo proporcional a la mínima altura posible, o sea O(log 2 n), es necesario, después de cada operación modificadora, mantener el árbol tan equilibrado como sea posible.
 
-- **Factor de equilibrio de un nodo:** Altura del subárbol derecho menos altura del subárbol izquierdo del nodo.  
-- **Árbol binario equilibrado:** Árbol binario en el cual el factor de equilibrio de cada nodo es -1, 0 ó 1.  
+- **Factor de equilibrio de un nodo:** Altura del subárbol derecho menos altura del subárbol izquierdo del nodo.   
+
+- **Árbol binario equilibrado:** Árbol binario en el cual el factor de equilibrio de cada nodo es -1, 0 ó 1.   
+
 - **Árbol AVL (Adelson-Velskii & Landis, 1962):** Árbol binario de búsqueda equilibrado. Los algoritmos de inserción y eliminación en un árbol AVL pueden mantener el árbol siempre equilibrado en un tiempo O(log n). Su implementación no es sencilla, ya que si se va a romper la condición de equilibrio, tienen que reorganizar el árbol realizando rotaciones de los nodos.
 
