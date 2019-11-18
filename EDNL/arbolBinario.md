@@ -16,7 +16,7 @@
 
 Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de grado 2, es decir, tienen 0, 1 ó 2 hijos. Éstos se llaman hijo izquierdo e hijo derecho.
 
-<h3 align="center"><img src="imagenes/arbolbinario.png" width="300px"/></h3>
+<h3 align="center"><img src="imagenes/arbolbinario.png"/></h3>
 
 <div id='id1' />
 
@@ -304,7 +304,7 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& a){
 ### Celdas enlazadas
 
 
-<h3 align="center"><img src="imagenes/arbolbinario_celdasenlazadas.png" width="500px"/></h3>
+<h3 align="center"><img src="imagenes/arbolbinario_celdasenlazadas.png"/></h3>
 
 ```c++
 #ifndef ABIN_H
@@ -491,7 +491,7 @@ typename Abin<T>::nodo Abin<T>::copiar(Abin<T>::nodo n){
 
 ### Posiciones relativas
 
-<h3 align="center"><img src="imagenes/arbolBinario_posrel.png" /></h3>
+<h3 align="center"><img src="imagenes/arbolBinario_posrel.png" width="400px"/></h3>
 
 
 ```c++
@@ -710,7 +710,7 @@ void recNivelesAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar
 
 #### Preorden
 
-<h3 align="center"><img src="imagenes/preorden.png" /></h3>
+<h3 align="center"><img src="imagenes/preorden.png" width="300px"/></h3>
 
 ```c++
 template <typename T>
@@ -727,7 +727,7 @@ void preordenAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(
 
 #### Inorden
 
-<h3 align="center"><img src="imagenes/inorden.png" /></h3>
+<h3 align="center"><img src="imagenes/inorden.png" width="300px"/></h3>
 
 ```c++
 template <typename T>
@@ -744,7 +744,7 @@ void inordenAbin (typename Abin<T>::nodo n, const Abin<T>& A, void (*procesar)(t
 
 #### Postorden
 
-<h3 align="center"><img src="imagenes/postorden.png" /></h3>
+<h3 align="center"><img src="imagenes/postorden.png" width="300px"/></h3>
 
 ```c++
 template <typename T>
