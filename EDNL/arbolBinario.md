@@ -488,6 +488,9 @@ typename Abin<T>::nodo Abin<T>::copiar(Abin<T>::nodo n){
 
 ### Posiciones relativas
 
+<h3 align="center"><img src="imagenes/arbolBinario_posrel.png" /></h3>
+
+
 ```c++
 #ifndef ABIN_VEC1_H
 #define ABIN_VEC1_H
