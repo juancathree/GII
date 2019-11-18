@@ -2,7 +2,7 @@
 
 Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de grado 2, es decir, tienen 0, 1 ó 2 hijos. Éstos se llaman hijo izquierdo e hijo derecho.
 
-<h3><img src="imagenes/arbolbinario.png" width="300px"/></h3>
+<h3 align="center"><img src="imagenes/arbolbinario.png" width="300px"/></h3>
 
 ## Operaciones
 
