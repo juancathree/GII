@@ -6,14 +6,16 @@
         - [Vectorial](#id4)
         - [Enlazadas](#id5)
 
-<div id='id1'></div>
+<div id='id1' />
+
 # Arbol Binario
 
 Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de grado 2, es decir, tienen 0, 1 ó 2 hijos. Éstos se llaman hijo izquierdo e hijo derecho.
 
 <h3 align="center"><img src="imagenes/arbolbinario.png" width="300px"/></h3>
 
-<div id='id2'></div>
+<div id='id2' />
+
 ## Operaciones
 
 **`Abin ()`**
@@ -66,10 +68,12 @@ Un **`árbol binario`** se define como un árbol cuyos nodos son, a lo sumo, de 
 - **Pre:** n es un nodo de A.
 - **Post:** Devuelve el nodo hijo derecho del nodo n. Si no existe, devuelve NODO_NULO.
 
-<div id='id3'></div>
+<div id='id3' />
+
 ## Implementacion
 
-<div id='id4'></div>
+<div id='id4' />
+
 ### Vectorial
 
 ```c++
@@ -292,7 +296,8 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& a){
 #endif // ABIN_VEC0_H
 ```
 
-<div id='id5'></div>
+<div id='id5' />
+
 ### Celdas enlazadas
 
 
