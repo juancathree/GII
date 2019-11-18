@@ -1,11 +1,10 @@
 # INDICE
 
-- [Arbol Binario](#id1)
-    - [Operaciones](#id2)
-    - [Implementacion](#id3)
-        - [Vectorial](#id4)
-        - [Celdas Enlazadas](#id5)
-        - [Posiciones Relativas](#id6)
+- [Operaciones](#id2)
+- [Implementacion](#id3)
+    - [Vectorial](#id4)
+    - [Celdas Enlazadas](#id5)
+    - [Posiciones Relativas](#id6)
 
 <div id='id1' />
 
