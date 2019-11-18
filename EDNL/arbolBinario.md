@@ -283,7 +283,7 @@ Abin<T>& Abin<T>::operator =(const Abin<T>& a){
 ### Celdas enlazadas
 
 
-<h3 align="center"><img src="imagenes/arbolbinario_celdasenlazadas.png" width="300px"/></h3>
+<h3 align="center"><img src="imagenes/arbolbinario_celdasenlazadas.png" width="500px"/></h3>
 
 ```c++
 #ifndef ABIN_H
