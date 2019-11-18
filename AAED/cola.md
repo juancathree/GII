@@ -1,3 +1,13 @@
+# INDICE
+
+- [Cola](#id1)
+    - [Operaciones](#id2)
+    - [Implementaciones](#id3)
+        - [Vectorial](#id4)
+        - [Enlazada](#id5)
+
+<div id="id1" />
+
 # Cola
 
 Una **`cola`** es una secuencia de elementos en la que las operaciones se realizan por los extremos:
@@ -8,6 +18,8 @@ En una cola el primer elemento añadido es el primero en salir de ella, por lo q
 **FIFO: First Input First Output.**
 
 <h3 align="center"><img src="cola.png"/></h3>
+
+<div id="id2" />
 
 ## Operaciones
 
@@ -28,7 +40,11 @@ En una cola el primer elemento añadido es el primero en salir de ella, por lo q
 **`void push(const tElemento& x)`**
 - **Postcondiciones:** Inserta el elemento x al final de la cola.
 
+<div id="id3" />
+
 ## Implementaciones
+
+<div id="id4" />
 
 ### Vectorial
 
@@ -123,6 +139,8 @@ inline Cola<T>::~Cola(){
 
 #endif // COLA_VEC_H
 ```
+
+<div id="id5" />
 
 ### Enlazada
 
