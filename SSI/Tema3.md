@@ -36,7 +36,7 @@ Los métodos de autenticación se suelen dividir en tres grandes categorías:
 - **Precauciones por parte del administrador:**
   - No debe crear nunca cuentas sin contraseña.
   - Cambiar la contraseña después de instalar el sistema.
-  - Proteger de forma adecuada el chero del sistema donde se almacenan las contraseñas.
+  - Proteger de forma adecuada el fichero del sistema donde se almacenan las contraseñas.
   - Vigilar las cuentas de los usuarios accidentales, ya que son las más propensas a la penetración por parte de intrusos.
 
 - **Proteccion automatizada:**
@@ -47,9 +47,8 @@ Los métodos de autenticación se suelen dividir en tres grandes categorías:
   - Bloqueo de cuentas.
   - Registro de entradas.
 
-- *Proteccion del fichero de contraseñas:**
-  - Las contraseñas tienen que guardarse cifradas. El método criptográfico utilizado debe ser irreversible para que no sea
-  posible descifrarlas.
+- **Proteccion del fichero de contraseñas:**
+  - Las contraseñas tienen que guardarse cifradas. El método criptográfico utilizado debe ser irreversible para que no sea posible descifrarlas.
   - El fichero que contiene las contraseñas no debería ser visible a los usuarios.
   
 ### 1.4 Contraseñas en UNIX/Linux
