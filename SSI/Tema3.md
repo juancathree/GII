@@ -168,9 +168,9 @@ configuración. . .
 ### 3.3 Tipos
 
 - **Completas:** copia todos los ficheros de interes
-- **Progresivas:** Solo se copian aquellos cheros que han sido creados o modificados desde la última copia 
+- **Progresivas:** Solo se copian aquellos ficheros que han sido creados o modificados desde la última copia 
 completa o progresiva efectuada.
-- **Diferenciales:** Solo se copian los cheros que han sido creados o modificados desde la última copia completa 
+- **Diferenciales:** Solo se copian los ficheros que han sido creados o modificados desde la última copia completa 
 realizada.
 
 ## 4. Auditorias
@@ -201,7 +201,7 @@ registro de los sucesos clave que se producen en este.
 - Puede avisar de acciones legales que se aparten del perfil
 
 **Perfil de intruso** Los intrusos suelen actuar de una forma similar cuando entran en un sistema ajeno: mirar 
-quién está conectado al sistema, examinar el sistema de cheros, moverse por losdirectorios tratando de obtener 
+quién está conectado al sistema, examinar el sistema de ficheros, moverse por losdirectorios tratando de obtener 
 información, no suelen estar conectado mucho tiempo.
 
 Acciones puntuales que denuncian la presencia de un ataque o intento de ataque:
