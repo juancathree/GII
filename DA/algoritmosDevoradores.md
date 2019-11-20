@@ -103,4 +103,39 @@ Esta estrategia **no produce**, en general, un **algoritmo devorador óptimo**.
 
 **`Ejemplo`** Para un cambio de 15 unidades con monedas de 1, 5, 10 y 12 unidades, el algoritmo devolvería una moneda de 12 y tres de 1. Sin embargo, el cambio óptimo está formado por dos monedas: una de 10 y otra de 5.
 
+Sin embargo, para determinados conjuntos de monedas el algoritmo sí es óptimo. De hecho, se demuestra que si se dispone de un número suficiente de monedas de 1, 5, 10, 25, 50, 100, 200 y 500 unidades, el algoritmo encuentra una solución óptima.
+Igualmente ocurre con monedas de 1, 5, 10, 20, 50, 100 y 200 unidades.
+
+Los elementos de este problema son los siguientes:
+- **`Conjunto inicial de candidatos:`** las monedas.
+- **`Función de solución:`** ¿Se ha devuelto el cambio en su totalidad?
+- **`Función de selección:`** Elige la mayor moneda disponible.
+- **`Función de factibilidad:`** ¿Es la moneda mayor al cambio restante?
+- **`Función objetivo:`** Número de monedas devueltas
+- **`Objetivo:`** Minimizar.
+
+Básicamente, se toma de la mayor moneda disponible, el número máximo de estas que no superen al total de cambio restante, se restan al cambio y se repite.
+
+```
+cambio : M × c → S
+C ← M
+S ← ∅
+mientras c != 0 ∧ C != ∅
+  {v, k} ← selecciona-monedas(C)
+  C ← C − {v, k}
+  k ← mín(k, c div v)
+  si k > 0
+    S ← S ∪ {hv, ki}
+    c ← c − v*k
+  
+selecciona-monedas : C → v × k
+v ← −∞
+para todo {a, b} ∈ C
+  si a > v
+    {v, k} ← {a, b}
+```
+
+Por lo tanto, **t(n) ∈ O(n2)** operaciones elementales. Preordenando las monedas en orden decreciente de valor, su
+selección se convierte en una operación elemental. Con esta mejora, el tiempo dominante es el de la ordenación y
+puede obtenerse un algoritmo con **t(n) ∈ Θ(n logn)**.
 
