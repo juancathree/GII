@@ -87,3 +87,20 @@ para todo {a, b} ∈ C
     {v, p} ← {a, b}
 ```
 
+Por lo tanto, **t(n) ∈ O(n2) operaciones elementales**. Preordenando los objetos en orden decreciente de relación
+valor/peso, la selección de los objetos se convierte en una operación elemental.
+Con esta mejora, el tiempo dominante es el de la ordenación y puede obtenerse un algoritmo con **t(n) ∈ Θ(n logn)**.
+
+## Problema del cambio de monedas
+
+Sea **M un conjunto de monedas** y **c una cantidad a devolver**. Por cada tipo de moneda de **valor v** se dispone de un suministro de **k unidades**. Se desea hallar la composición del cambio que posee el menor número de monedas.
+
+Una estrategia posible de selección de monedas consiste en elegir, de las que quedan, la de mayor valor. Esto se hace a diario en máquinas expendedoras, cajeros automáticos, etc. Si es posible devolver el cambio con las monedas disponibles, se actualiza el conjunto para su próximo empleo.
+
+Conviene seleccionar todas las monedas del mismo valor de una vez: puede tratarse **M** como un multiconjunto o como un conjunto de pares.
+
+Esta estrategia **no produce**, en general, un **algoritmo devorador óptimo**.
+
+**`Ejemplo`** Para un cambio de 15 unidades con monedas de 1, 5, 10 y 12 unidades, el algoritmo devolvería una moneda de 12 y tres de 1. Sin embargo, el cambio óptimo está formado por dos monedas: una de 10 y otra de 5.
+
+
