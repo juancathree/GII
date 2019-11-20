@@ -56,6 +56,6 @@ public class UsoRunnable implements Runnable {
 
 ## Expresiones lambda
 
-```c++
+```java
 
 ```
