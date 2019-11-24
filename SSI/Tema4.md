@@ -25,7 +25,7 @@ El Gobierno de España atribuye las competencias en materia de ciberseguridad a 
 
 4. El sujeto afectado comunica las datos necesarios al organismo receptor implicado o autoridad nacional competente.
 
-5. Si procede, desde la Ocina de Coordinación Cibernética (CNPIC) se pone la información a disposición de las Fuerzas y Cuerpos de Seguridad del Estado y Ministerio Fiscal para iniciar la investigación policial y judicial (art. 14.3 RD Ley 12/2018).
+5. Si procede, desde la Oficina de Coordinación Cibernética (CNPIC) se pone la información a disposición de las Fuerzas y Cuerpos de Seguridad del Estado y Ministerio Fiscal para iniciar la investigación policial y judicial (art. 14.3 RD Ley 12/2018).
 
 ## Taxonomia de los ciberincidentes
 
@@ -167,3 +167,104 @@ Cuando un determinado suceso pueda asociarse a más de un tipo de incidente, est
     - Obtención de información: Escaneo de redes (scanning) y análisis de paquetes (sniffing).
     - Intrusión:Compromiso de cuenta sin privilegios.
     - Otros: Otros.
+    
+### Nivel de impacto del ciberincidente
+
+El indicador de impacto de un ciberincidente se determinará evaluando las consecuencias que tal ciberincidente ha tenido en:
+- Las funciones y actividades de la organización afectada.
+- En sus activos.
+- En los individuos afectados.
+
+Los criterios para determinar el nivel de impacto son:
+- Impacto en la Seguridad Nacional o Seguridad Ciudadana.
+- Efectos en la prestación de un servicio esencial o en una infraestructura crítica.
+- Tipología de la información o sistemas afectados.
+- Grado de afectación a las instalaciones de la organización.
+- Posible interrupción en la prestación del servicio normal de la organización.
+- Tiempo y costes propios y ajenos hasta la recuperación del normal funcionamiento de las instalaciones.
+- Pérdidas económicas.
+- Extensión geográfica afectada.
+- Daños reputacionales asociados.
+
+
+Los niveles son:
+
+- **Critico:**
+    - Afecta apreciablemente a la Seguridad Nacional.
+    - Afecta a la seguridad ciudadana, con potencial peligro para la vida de las personas.
+    - Afecta a una Infraestructura Crítica.
+    - Afecta a sistemas clasificados SECRETO.
+    - Afecta a más del 90 % de los sistemas de la organización.
+    - Interrupción en la prestación del servicio superior a 24 horas y superior al 50 % de los usuarios.
+    - El ciberincidente precisa para resolverse > 30 días/pers.
+    - Impacto económico superior al 0,1 % del P.I.B. actual.
+    - Extensión geográfica supranacional.
+    - Daños reputacionales muy elevados y cobertura continua en medios de comunicación internacionales.
+
+- **Muy alto:**
+    - Afecta a la seguridad ciudadana con potencial peligro para bienes materiales.
+    - Afecta apreciablemente a actividades ociales o misiones en el extranjero.
+    - Afecta a un servicio esencial.
+    - Afecta a sistemas clasificados RESERVADO.
+    - Afecta a más del 75 % de los sistemas de la organización.
+    - Interrupción en la prestación del servicio superior a 8 horas y superior al 35 % de los usuarios.
+    - El ciberincidente precisa resolverse entre 10 y 30 días/pers.
+    - Impacto económico entre el 0,07 % y el 0,1 % del P.I.B.
+    - Extensión geográfica superior a 4 CC.AA. o 1 T.I.S.
+    - Daños reputacionales a la imagen del país (marca España).
+    - Daños reputacionales elevados y cobertura continua en medios de comunicación nacionales.
+
+- **Alto:**
+    - Afecta a más del 50 % de los sistemas de la organización.
+    - Interrupción en la prestación del servicio superior a 1 hora y superior al 10 % de usuarios.
+    - El ciberincidente precisa resolverse entre 5 y 10 días/pers.
+    - Impacto económico entre el 0,03 % y el 0,07 % del P.I.B.
+    - Extensión geográfica superior a 3 CC.AA.
+    - Daños reputacionales de difícil reparación, con eco mediático (amplia cobertura en los medios de comunicación) y              afectando a la reputación de terceros.
+    
+- **Medio:**
+    - Afecta a más del 20 % de los sistemas de la organización.
+    - Interrupción en la presentación del servicio superior al 5 % de usuarios.
+    - El ciberincidente precisa para resolverse entre 1 y 5 días/pers.
+    - Impacto económico entre el 0,001 % y el 0,03 % del P.I.B.
+    - Extensión geográfica superior a 2 CC.AA.
+    - Daños reputacionales apreciables, con eco mediático (amplia cobertura en los medios de comunicación).
+    
+- **Bajo:**
+    - Afecta a los sistemas de la organización.
+    - Interrupción de la prestación de un servicio.
+    - El ciberincidente precisa para resolverse menos de 1 día/pers.
+    - Impacto económico entre el 0,0001 % y el 0,001 % del P.I.B.
+    - Extensión geográfica superior a 1 CC.AA.
+    - Daños reputacionales puntuales, sin eco mediático.
+    
+Es obligatorio la notificación de todos aquellos incidentes que se categoricen con un nivel CRÍTICO (inmediata), MUY ALTO (12 horas) O ALTO (48 horas).
+
+### Informacion a notificar
+
+- **Asunto:** Frase que describe de forma general el incidente.
+- **Descripción:** Describir con detalle lo sucedido.
+- **Afectado:** Indicar si el afectado es empresa o particular.
+- **Fecha y hora del incidente:** Indicar cuándo ha ocurrido el ciberincidente.
+- **Fecha y hora de detección del incidente:** Indicar cuándo se ha detectado el ciberincidente.
+- **Taxonomía del incidente:** Posible clasificación y tipo de incidente en función de la taxonomía descrita.
+- **Recursos afectados:** Indicar la información técnica sobre el número y tipo de activos afectados por el ciberincidente, incluyendo direcciones IP, S.O., aplicaciones, versiones.
+- **Origen del incidente:** Indicar la causa del incidente si se conoce. Apertura de un fichero sospechoso, conexión de un
+dispositivo USB, acceso a una página web maliciosa, etc.
+- **Contramedidas:** Actuaciones realizadas para resolver el ciberincidente hasta el momento de la notificación a la
+autoridad competente o CSIRT de referencia.
+- **Impacto:** Impacto estimado en la entidad, en función del nivel de afectación del ciberincidente.
+- **Adjuntos:** Incluir documentos adjuntos que puedan aportar información que ayude a conocer la causa del problema o a su resolución (capturas de pantalla, ficheros de registro de información, correos electrónicos, etc.).
+- **Regulación afectada:** ENS/RGPD/NIS/PIC/Otros.
+
+### Estados de los ciberincidentes
+
+- **Cerrado (Resuelto y sin respuesta):** No hay respuesta por parte del organismo afectado en un periodo determinado.
+- **Cerrado (Resuelto y con respuesta):** El organismo afectado ha solventado la amenaza y notifica a su CSIRT de referencia el cierre del ciberincidente.
+- **Cerrado (Sin impacto):** La detección ha resultado positiva pero el organismo no es vulnerable o no se ve afectado por el ciberincidente.
+- **Cerrado (Falso positivo):** La detección ha sido errónea.
+- **Cerrado (Sin resolución y sin respuesta):** Pasado un periodo de 60 días, si el ciberincidente no ha sido cerrado por el organismo afectado, es cerrado por el CSIRT de referencia.
+- **Cerrado (Sin resolución y con respuesta):** No se ha alcanzado una solución al problema o el afectado indica que no sabe solventarlo incluso con las indicaciones proporcionadas por el CSIRT.
+- **Abierto:** Estado que va desde que el organismo afectado notifica la amenaza al CSIRT de referencia, o bien este
+último lo comunica al afectado, hasta que se produce el cierre del mismo.
+
