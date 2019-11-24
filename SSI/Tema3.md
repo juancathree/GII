@@ -211,6 +211,13 @@ Acciones puntuales que denuncian la presencia de un ataque o intento de ataque:
 - Uso de órdenes de otros sistemas operativos.
 
 
+## 5. Gestores de contraseñas
+
+Aplicacion que almacena usuarios, contraseñas, notas, etc. en una base de datos cifrada y protegida con una contraseña maestra. Ademas, algunos gestores permiten generar contraseñas seguras.
+
+El **2FA** es una medida de seguridad extra que normalmente requiere de un codigo obtenido de una aplicacion, un SMS o un
+fichero llave, aparte de las credenciales para acceder al servicio.
+
 
 
 
