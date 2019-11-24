@@ -5,10 +5,10 @@
 ### Organismos de referencia
 
 El Gobierno de España atribuye las competencias en materia de ciberseguridad a diversos organismos:
-- CCN-CERT: Centro Criptológico Nacional del Centro Nacional de Inteligencia.
-- INCIBE-CERT: Instituto Nacional de Ciberseguridad de España.
-- CNPIC: Centro Nacional de Protección de Infraestructuras y Ciberseguridad.
-- ESPDEF-CERT: Mando Conjunto de Ciberdefensa. Ámbito de redes y sistemas de información y telecomunicaciones de las Fuerzas Armadas, y otros que afecten a la Defensa Nacional.
+- **`CCN-CERT:`** Centro Criptológico Nacional del Centro Nacional de Inteligencia.
+- **`INCIBE-CERT:`** Instituto Nacional de Ciberseguridad de España.
+- **`CNPIC:`** Centro Nacional de Protección de Infraestructuras y Ciberseguridad.
+- **`ESPDEF-CERT:`** Mando Conjunto de Ciberdefensa. Ámbito de redes y sistemas de información y telecomunicaciones de las Fuerzas Armadas, y otros que afecten a la Defensa Nacional.
 
 ### Metodologia de reporte
 
@@ -324,7 +324,7 @@ autoridad competente o CSIRT de referencia.
     
 ## Metricas e indicadores
 
-Métricas e indicadores de referencia recomendados para medir el nivel de implantación y ecacia del proceso de gestión de
+Métricas e indicadores de referencia recomendados para medir el nivel de implantación y eficacia del proceso de gestión de
 incidentes de cada organización.
 
 - **Metricas de implantacion**
