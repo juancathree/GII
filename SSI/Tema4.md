@@ -268,3 +268,81 @@ autoridad competente o CSIRT de referencia.
 - **Abierto:** Estado que va desde que el organismo afectado notifica la amenaza al CSIRT de referencia, o bien este
 último lo comunica al afectado, hasta que se produce el cierre del mismo.
 
+
+## Gestion de incidentes de ciberseguridad
+
+- **Fase de preparacion:**
+    - Fase inicial en la que toda entidad debe estar preparada para cualquier suceso que pudiera ocurrir.
+    - Debe tenerse en cuenta tres pilares fundamentales: las personas, los procedimientos y la tecnología.
+    - Los puntos más relevantes a tener en cuenta son:
+        - Disponer de información actualizada de contacto.
+        - Mantener las políticas y procedimientos actualizados.
+        - Herramientas a utilizar en todas las fases.
+        - Formación del equipo humano para mejorar las capacidades técnicas y operativas.
+        - Realizar análisis de riesgos que permita disponer de un plan de tratamiento de riesgos que permita controlarlos.
+        - Ejecución de ciberejercicios a fin de entrenar las capacidades y procedimientos técnicos, operativos, de gestión y         coordinación.
+
+- **Fase de identificacion:**
+    - El objetivo es identificar o detectar un ciberincidente; es importante realizar una monitorización lo más completa
+    posible.
+    - Una correcta identificación se basa en:
+        - Registrar y monitorizar los eventos de las redes, sistemas y aplicaciones.
+        - Recolectar información situacional que permita detectar anomalías.
+        - Disponer de capacidades para descubrir ciberincidentes y comunicarlos a los contactos apropiados.
+        - Recopilar y almacenar de forma segura todas las evidencias.
+        - Compartir información con otros equipos internos y externos de forma bidireccional para mejorar las capacidades de         detección.
+        
+- **Fase de contencion:**
+    - Tras la identificación de un ciberincidente, la máxima prioridad es contener su impacto en la organización para evitar     la propagación a otros sistemas o redes.
+    - Debe realizarse el triage (evaluar toda la información disponible para realizar una clasificación y priorización del       ciberincidente en función del tipo y de la criticidad de la información y los sistemas afectados).
+    - Adicionalmente se identifican posibles impactos en el negocio.
+    - Se debe:
+        - Registrar y monitorizar los eventos de las redes, sistemas y aplicaciones.
+        - Recolectar información situacional que permita detectar anomalías.
+        - Disponer de capacidades para descubrir ciberincidentes y comunicarlos a los contactos apropiados.
+        - Recopilar y almacenar de forma segura todas las evidencias.
+        - Compartir información con otros equipos internos y externos de forma bidireccional para mejorar las capacidades de         detección.
+        
+- **Fase de mitigacion:**
+    - Las medidas de mitigación dependen del tipo de ciberincidente y la afectación que haya tenido.
+    - Algunas recomendaciones en esta fase son:
+        - Determinar las causas y los síntomas del ciberincidente para determinar las medidas de mitigación más eficaces.
+        - Identificar y eliminar todo el software utilizado por los atacantes.
+        - Recuperación de la última copia de seguridad limpia.
+        - Identificar servicios utilizados durante el ataque, ya que en ocasiones los atacantes utilizan servicios legítimos         de los sistemas atacados.
+        
+- **Fase de recuperacion:**
+    - Consiste en devolver el nivel de operación a su estado normal y que las áreas de negocio afectadas puedan retomar su       actividad.
+    - Es importante no precipitarse en la puesta en producción de sistemas que se han visto implicados en ciberincidentes.
+    - Debe definirse un periodo de tiempo con medidas adicionales de monitorización de los sistemas puestos en producción.
+    
+- **Fase de post-incidente:**
+    - Aprender de lo sucedido, analizando las causas del problema, cómo se ha desarrollado la actividad durante la gestión       del ciberincidente y todos los problemas asociados.
+    - Tomar las medidas adecuadas para evitar que una situación similar se pueda volver a repetir, además de mejorar los
+    procedimientos.
+    - Realizar un informe del ciberincidente que deberá detallar la causa del ciberincidente y coste, y las medidas que la       organización debe tomar para prevenir futuros ciberincidentes de naturaleza similar.
+    
+## Metricas e indicadores
+
+Métricas e indicadores de referencia recomendados para medir el nivel de implantación y ecacia del proceso de gestión de
+incidentes de cada organización.
+
+- **Metricas de implantacion**
+    - **`Indicador:`**  Alcance del sistema de gestión de incidentes.
+    - **`Objetivo:`** Saber si todos los sistemas de información están adscritos al servicio.
+    
+- **Metricas de eficacia**
+    - **`Indicador:`** Resolución de ciberincidentes de nivel de impacto ALTO / MUY ALTO / CRÍTICO.
+    - **`Objetivo:`** Resolver rápidamente incidentes de alto impacto.
+    - **`Indicador:`** Resolución de ciberincidentes de nivel de impacto BAJO / MEDIO.
+    - **`Objetivo:`** Resolver rápidamente incidentes de impacto medio.
+    
+- **Metricas de eficiencia**
+    - **`Indicador:`** Recursos consumidos.
+    - **`Objetivo:`** Conocer si es necesario aumentar la fuerza de trabajo.
+    
+- **Metricas de gestion de incidentes**
+    - **`Indicador:`** Estado de cierre de los incidentes.
+    - **`Objetivo:`** Ser capaces de gestionar incidentes de seguridad.
+    - **`Indicador:`** Estado de cierre de los incidentes de peligrosidad MUY ALTA / CRÍTICA.
+    - **`Objetivo:`** Ser capaces de gestionar incidentes de seguridad de alta peligrosidad.
