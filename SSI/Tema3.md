@@ -159,8 +159,8 @@ al del sujeto y además, el conjunto de categorías del sujeto deben estar inclu
   - **`Ventajas:`** La recuperación del sistema, en caso de tener que recuperarlo completo, es más sencilla.
   - **`Inconvenientes:`** Consume más recursos (soporte y tiempo).
 
-- **Copia parcial:** Copiamos aquello que sea especíco de nuestro sistema: cheros de usuarios, ficheros de 
-configuración. . .
+- **Copia parcial:** Copiamos aquello que sea específico de nuestro sistema: ficheros de usuarios, ficheros de 
+configuración...
   - **`Ventajas:`** consume menos recursos
   - **`Inconvenientes:`** Si hay que recuperar todo el sistema, tendremos que empezar instalando el SO, todo el 
   software adicional instalado (más parches. . . ) y, por último, la copia de seguridad.
