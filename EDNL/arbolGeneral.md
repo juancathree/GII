@@ -21,6 +21,7 @@ se llama hijo izquierdo, el segundo es el hermano derecho de éste, el tercero e
 
 
 <div id="id1"/>
+
 ## Operaciones
 
 **`Agen()`**
@@ -79,6 +80,7 @@ se llama hijo izquierdo, el segundo es el hermano derecho de éste, el tercero e
 ## Implementaciones
 
 <div id="id2"/>
+
 ### Vectorial
 
 ```c++
@@ -312,6 +314,7 @@ Agen<T>& Agen<T>::operator =(const Agen<T>& a){
 #endif // AGEN_LIS_H
 ```
 <div id="id3"/>
+
 ### Celdas enlazadas
 
 ```c++
@@ -527,6 +530,7 @@ typename Agen<T>::nodo Agen<T>::copiar(Agen<T>::nodo n){
 ### Profundidad
 
 <div id="id4"/>
+
 #### Preorden
 
 ```c++
@@ -549,6 +553,7 @@ void preordenAgen(typename Agen<T>::nodo n, const Agen<T>& A,
 ```
 
 <div id="id5"/>
+
 #### Inorden
 
 ```c++
@@ -574,6 +579,7 @@ void inordenAgen(typename Agen<T>::nodo n, const Agen<T>& A,
 ```
 
 <div id="id6"/>
+
 #### Postorden
 
 ```c++
@@ -597,6 +603,7 @@ void postordenAgen(typename Agen<T>::nodo n, const Agen<T>& A,
 
 
 <div id="id7"/>
+
 ### Anchura
 
 ```c++
