@@ -1,3 +1,16 @@
+# INDICE
+
+- [Operaciones](#id1)
+- Implementaciones
+  - [Vectorial](#id2)
+  - [Celdas enlazadas](#id3)
+- Recorridos
+  - Profundidad
+    - [Preorden](#id4)
+    - [Inorden](#id5)
+    - [Postorden](#id6)
+  - [Anchura](#id7)
+
 # Arbol general
 
 Un **árbol general** se define como un árbol cuyos nodos son de cualquier grado, es decir, pueden tener un número cualquiera de 
@@ -6,6 +19,8 @@ se llama hijo izquierdo, el segundo es el hermano derecho de éste, el tercero e
 
 <h1 align="center"><img src="imagenes/arbolGeneral.png" /></h1>
 
+
+<div id="id1"/>
 ## Operaciones
 
 **`Agen()`**
@@ -63,6 +78,7 @@ se llama hijo izquierdo, el segundo es el hermano derecho de éste, el tercero e
 
 ## Implementaciones
 
+<div id="id2"/>
 ### Vectorial
 
 ```c++
@@ -295,7 +311,7 @@ Agen<T>& Agen<T>::operator =(const Agen<T>& a){
 
 #endif // AGEN_LIS_H
 ```
-
+<div id="id3"/>
 ### Celdas enlazadas
 
 ```c++
@@ -510,6 +526,7 @@ typename Agen<T>::nodo Agen<T>::copiar(Agen<T>::nodo n){
 
 ### Profundidad
 
+<div id="id4"/>
 #### Preorden
 
 ```c++
@@ -531,6 +548,7 @@ void preordenAgen(typename Agen<T>::nodo n, const Agen<T>& A,
 }
 ```
 
+<div id="id5"/>
 #### Inorden
 
 ```c++
@@ -555,6 +573,7 @@ void inordenAgen(typename Agen<T>::nodo n, const Agen<T>& A,
 }
 ```
 
+<div id="id6"/>
 #### Postorden
 
 ```c++
@@ -577,6 +596,7 @@ void postordenAgen(typename Agen<T>::nodo n, const Agen<T>& A,
 ```
 
 
+<div id="id7"/>
 ### Anchura
 
 ```c++
