@@ -159,8 +159,8 @@ al del sujeto y además, el conjunto de categorías del sujeto deben estar inclu
   - **`Ventajas:`** La recuperación del sistema, en caso de tener que recuperarlo completo, es más sencilla.
   - **`Inconvenientes:`** Consume más recursos (soporte y tiempo).
 
-- **Copia parcial:** Copiamos aquello que sea especíco de nuestro sistema: cheros de usuarios, ficheros de 
-configuración. . .
+- **Copia parcial:** Copiamos aquello que sea específico de nuestro sistema: ficheros de usuarios, ficheros de 
+configuración...
   - **`Ventajas:`** consume menos recursos
   - **`Inconvenientes:`** Si hay que recuperar todo el sistema, tendremos que empezar instalando el SO, todo el 
   software adicional instalado (más parches. . . ) y, por último, la copia de seguridad.
@@ -210,6 +210,13 @@ Acciones puntuales que denuncian la presencia de un ataque o intento de ataque:
 - Uso de herramientas que detectan agujeros de seguridad.
 - Uso de órdenes de otros sistemas operativos.
 
+
+## 5. Gestores de contraseñas
+
+Aplicacion que almacena usuarios, contraseñas, notas, etc. en una base de datos cifrada y protegida con una contraseña maestra. Ademas, algunos gestores permiten generar contraseñas seguras.
+
+El **2FA** es una medida de seguridad extra que normalmente requiere de un codigo obtenido de una aplicacion, un SMS o un
+fichero llave, aparte de las credenciales para acceder al servicio.
 
 
 
