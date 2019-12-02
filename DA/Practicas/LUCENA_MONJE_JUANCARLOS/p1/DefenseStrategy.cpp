@@ -195,6 +195,10 @@ void DEF_LIB_EXPORTED placeDefenses(bool** freeCells, int nCellsWidth, int nCell
 
 #ifdef PRINT_DEFENSE_STRATEGY
 
+void funcion(int x){
+    return x*x;
+}
+
     float** cellValues = new float* [nCellsHeight]; 
     for(int i = 0; i < nCellsHeight; ++i) {
        cellValues[i] = new float[nCellsWidth];
