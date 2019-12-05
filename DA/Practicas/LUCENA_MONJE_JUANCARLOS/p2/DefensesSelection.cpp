@@ -37,23 +37,19 @@ void tablaSubproblema(int **f, std::list<Defense*> defenses, unsigned int ases, 
     std::list<Defense*>::iterator it = defenses.begin();
     for(int j=0; j < ases; j++){
         if(j < (*it)->cost)
-            f[(*it)->id][j] = 0;
+            f[0][j] = 0;
         else
-            f[(*it)->id][j] = defenseValue((*it), radio/nDefenses, damage/nDefenses, atps/nDefenses, health/nDefenses, costs/nDefenses);
+            f[0][j] = defenseValue((*it), radio/nDefenses, damage/nDefenses, atps/nDefenses, health/nDefenses, costs/nDefenses);
     }
-    while(it != defenses.end()){
+    for(int i=1; i < nDefenses; i++){
         it++;
         for(int j=0; j < ases; j++){
             if(j < (*it)->cost)
-                f[(*it)->id][j] = f[(*it)->id-1][j];
+                f[i][j] = f[i-1][j];
             else    
-                f[(*it)->id][j] = std::max(f[((*it)->id)-1][j], f[((*it)->id)-1][j-(*it)->cost] + defenseValue((*it), radio/nDefenses, damage/nDefenses, atps/nDefenses, health/nDefenses, costs/nDefenses));
+                f[i][j] = std::max(f[i-1][j], f[i-1][j-(*it)->cost] + defenseValue((*it), radio/nDefenses, damage/nDefenses, atps/nDefenses, health/nDefenses, costs/nDefenses));
         }
     }
-}
-
-void costeCaminos(int **p){
-
 }
 
 void DEF_LIB_EXPORTED selectDefenses(std::list<Defense*> defenses, unsigned int ases, std::list<int> &selectedIDs
