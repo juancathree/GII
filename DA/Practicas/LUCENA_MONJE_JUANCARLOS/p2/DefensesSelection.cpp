@@ -10,36 +10,25 @@
 
 using namespace Asedio;
 
-int defenseValue(Defense* defense, float radio, float damage, float attacksPerSecond, float health, float cost){
-    float value=0;
-    if(defense->radio > radio) value++;
-    if(defense->damage > damage) value++;
-    if(defense->attacksPerSecond < attacksPerSecond) value++;
-    if(defense->health > health) value++;
-    if(defense->cost < cost) value+2;
-    return value;
+int defenseValue(Defense* defense){
+    return defense->range*0.1+defense->damage*0.3+defense->attacksPerSecond*0.3+defense->health*0.1-defense->cost*0.2;
 }
 
-void promedio(std::list<Defense*> defenses, float &radio, float &damage, float &atps, float &health, float &costs, int &nDefenses){
+void nDefensas(std::list<Defense*> defenses, int &nDefenses){
     std::list<Defense*>::iterator it = defenses.begin();
     while(it != defenses.end()){
         nDefenses++;
-        radio += (*it)->radio;
-        damage += (*it)->damage;
-        atps += (*it)->attacksPerSecond;
-        health += (*it)->health;
-        costs += (*it)->cost;
         it++;
     }
 }
 
-void tablaSubproblema(int **f, std::list<Defense*> defenses, unsigned int ases, float radio, float damage, float atps, float health, float costs, int nDefenses){
+void tablaSubproblema(int **f, std::list<Defense*> defenses, unsigned int ases, int nDefenses){
     std::list<Defense*>::iterator it = defenses.begin();
     for(int j=0; j < ases; j++){
         if(j < (*it)->cost)
             f[0][j] = 0;
         else
-            f[0][j] = defenseValue((*it), radio/nDefenses, damage/nDefenses, atps/nDefenses, health/nDefenses, costs/nDefenses);
+            f[0][j] = defenseValue((*it));
     }
     for(int i=1; i < nDefenses; i++){
         it++;
@@ -47,7 +36,7 @@ void tablaSubproblema(int **f, std::list<Defense*> defenses, unsigned int ases, 
             if(j < (*it)->cost)
                 f[i][j] = f[i-1][j];
             else    
-                f[i][j] = std::max(f[i-1][j], f[i-1][j-(*it)->cost] + defenseValue((*it), radio/nDefenses, damage/nDefenses, atps/nDefenses, health/nDefenses, costs/nDefenses));
+                f[i][j] = std::max(f[i-1][j], f[i-1][j-(*it)->cost] + defenseValue((*it)));
         }
     }
 }
@@ -56,30 +45,28 @@ void DEF_LIB_EXPORTED selectDefenses(std::list<Defense*> defenses, unsigned int 
             , float mapWidth, float mapHeight, std::list<Object*> obstacles) {
 
     unsigned int cost = 0;
-    std::list<Defense*>::iterator it = defenses.begin();
-    while(it != defenses.end()) {
-        if(cost + (*it)->cost <= ases) {
-            selectedIDs.push_back((*it)->id);
-            cost += (*it)->cost;
-        }
-        ++it;
-    }
 
-    float radio = 0, damage = 0, atps = 0, health = 0, costs=0;
     int nDefenses = 0;
-    promedio(defenses, radio, damage, atps, health, costs, nDefenses);
+    nDefensas(defenses, nDefenses);
     
     int** f = new int*[nDefenses];
     for(int i=0; i<nDefenses; i++)
         f[i] = new int[ases]; 
     
-    tablaSubproblema(f, defenses, ases, radio, damage, atps, health, costs, nDefenses);
+    tablaSubproblema(f, defenses, ases, nDefenses);
 
-    for(int i=0; i<nDefenses; i++){
-        for(int j=0; j<ases; j++){
-            std::cout << i <<": " <<f[i][j] << " ";
+    std::list<Defense*>::iterator it = defenses.end();
+    it--;
+    for(int i = nDefenses-1; i >= 0; i--){
+        if(i == 0 && f[i][ases-1] != 0){
+            selectedIDs.push_back(i);
         }
-        std::cout << std::endl;
-    }
+        else{
+            if(f[i][ases-1] != f[i-1][ases-1]){
+                selectedIDs.push_back(i);
+            }
+        }
+        it--;
+    }    
     
 }
