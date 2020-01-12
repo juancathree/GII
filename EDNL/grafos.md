@@ -43,3 +43,32 @@ conexo.
 ambos sentidos si el grafo es dirigido).
 - **`Subgrafo:`** Dado un grafo G = (V, A), diremos que G’ = (V’, A’), donde V’ ⊆ V y A’ ⊆ A, es un
 subgrafo de G si A’ sólo contiene todas las aristas de A que unen vértices de V’.
+
+## Representaciones
+
+### 1. Matriz de adyacencia
+
+Dado un grafo G = (V, A) con n vértices, se define la matriz de adyacencia asociada a G
+como una matriz M(n×n) donde:  
+```
+  M(i,j) = 1 si (i, j) ∈ A y M(i,j) = 0 si (i, j) ∉ A  
+```
+Si G es un grafo no dirigido, M es una matriz simétrica ya que (i, j) = (j, i) para
+cualesquiera vértices i, j.
+
+### 2. Matriz de costes
+
+Dado un grafo G = (V, A) con n vértices, se define la matriz de costes asociada a G como
+una matriz C(n×n) donde:
+```
+  C(i,j) = p si (i, j) ∈ A, donde p = peso asociado a (i, j)
+  C(i,j) = peso_ilegal si (i, j) ∉ A, donde peso_ilegal es un valor no válido como peso de un arco.
+```
+
+### 3. Listas de adyacencia
+Asociamos a cada vértice i del grafo una lista que almacena todos los vértices
+adyacentes a i. Tenemos dos tipos:
+  - Grafos no ponderados.
+  - Grafos ponderados
+
+
