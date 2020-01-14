@@ -32,5 +32,23 @@ la administracion publica española.
 
 **Elementos que la componen:**
 
+- Estructura principal de procesos de desarrollo
+- Interfaces
+- Tecnicas
+- Participantes
+
+**Procesos principales:**
+
+- Planificacion de sistemas de informacion
+- Desarrollo de sistemas de informacion
+- Mantenimiento de sistemas de informacion
+
+**Interfaces:**
+
+- Gestion de proyectos
+- Seguridad
+- Gestion de la configuracion
+- Aseguramiento de la calidad
+
 
 
